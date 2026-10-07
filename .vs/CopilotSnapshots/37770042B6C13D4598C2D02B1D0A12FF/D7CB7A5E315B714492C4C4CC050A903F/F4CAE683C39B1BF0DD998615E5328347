@@ -1,0 +1,19 @@
+﻿#include <iostream>
+#include <cstdio>
+#include <thread>
+
+void foo() {
+	printf("Hello from thread!\n");
+}
+
+void run() {
+	std::thread thread1(foo);
+	thread1.join();
+
+	printf("Hello from main thread!\n");
+}
+
+int main() {
+	run();
+	return 0;
+}
